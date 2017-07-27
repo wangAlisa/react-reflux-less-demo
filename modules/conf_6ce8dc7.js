@@ -1,0 +1,1 @@
+define("modules/conf.jsx",function(e,s,A){"use strict";A.exports={DATABASE:[],searchVlue:[],PAGE:1,NAVURL:""}});

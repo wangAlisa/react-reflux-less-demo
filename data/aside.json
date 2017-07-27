@@ -1,0 +1,496 @@
+{
+	"errno": 0,
+	"data" : [
+		{
+		"title" :"热门游戏",
+		"childData": [
+				"英雄联盟",
+				"炉石传说",
+				"DOTA2",
+				"穿越火线",
+				"魔兽世界",
+				"守望先锋",
+				"格斗游戏",
+				"DNF",
+				"棋牌娱乐",
+				"CS:GO",
+				"魔兽争霸",
+				"全部>>"
+			]
+		},
+		{
+		"title" :"娱乐",
+		"childData" : [
+				"颜值",
+				"户外",
+				"星秀",
+				"美食",
+				"音乐",
+				"二次元",
+				"时尚",
+				"校园",
+				"全部>>"
+			]
+		},
+		{
+		"title":"科技",
+		"childData":[
+				"数码科技",
+				"汽车",
+				"财经",
+				"科普",
+				"军事",
+				"全部>>"
+			]
+		},
+		{
+		"title":"文娱课堂",
+		"childData":[
+				"鱼教",
+				"鱼艺",
+				"视听点评",
+				"企鹅直播",
+				"设计师",
+				"体育赛事",
+				"全部>>"
+			]
+		},
+		{
+		"title":"正能量",
+		"childData":[
+			"正能量"
+			]
+		}
+	],
+	"changeList":[
+		[
+			{
+			"img": "img/change/01.jpg",
+			"title": "我是你们的开心果呀^ ^",
+			"name": "水果姐姐i",
+			"address": "校园"
+			},
+			{
+			"img": "img/change/02.jpg",
+			"title": "小谷:早上好",
+			"name": "Good小谷",
+			"address": "英魂口袋版"
+			},
+			{
+			"img": "img/change/11.jpg",
+			"title": "恢复的一天 十天高温注意防暑",
+			"name": "loveyou_qq",
+			"address": "CS:GO"
+			},
+			{
+			"img": "img/change/03.jpg",
+			"title": "【王者教学】最强全能，单排徒弟星耀上分单排徒弟星耀上分",
+			"name": "蘭陵大大",
+			"address": "王者荣耀"
+			}
+		],
+		[
+			{
+			"img": "img/change/04.jpg",
+			"title": "全能主播阿杰带你玩球球全能主播阿杰带你玩球球 单排徒弟星耀上分",
+			"name": "不想错过你丶阿杰",
+			"address": "球球大作战"
+			},
+			{
+			"img": "img/change/05.jpg",
+			"title": "Joker周六长沙球宝见面会全能主播阿杰带你玩球球 单排徒弟星耀上分",
+			"name": "Joker超级战队",
+			"address": "球球大作战"
+			},
+			{
+			"img": "img/change/06.jpg",
+			"title": "珍惜：还是打超影吧周六长沙球宝见面会全能主播",
+			"name": "瓜皮珍惜",
+			"address": "火影忍者"
+			},
+			{
+			"img": "img/change/07.jpg",
+			"title": "恢复的一天 十天高温注意防暑周六长沙球宝见面会全能主播",
+			"name": "loveyou_qq",
+			"address": "CS:GO"
+			}
+		],
+		[
+			{
+			"img": "img/change/08.jpg",
+			"title": "花山街社区卫生守护者周六长沙球宝见面会全能主播",
+			"name": "斗鱼党宣",
+			"address": "正能量"
+			},
+			{
+			"img": "img/change/09.jpg",
+			"title": "Joker周六长沙球宝见面会周六长沙球宝见面会全能主播",
+			"name": "Joker超级战队",
+			"address": "球球大作战"
+			},
+			{
+			"img": "img/change/10.jpg",
+			"title": "珍惜：还是打超影吧",
+			"name": "瓜皮珍惜",
+			"address": "火影忍者"
+			},
+			{
+			"img": "img/change/12.jpg",
+			"title": "花山街社区卫生守护者周六长沙球宝见面会全能主播",
+			"name": "斗鱼党宣",
+			"address": "正能量"
+			}
+		]
+	],
+	"itemList" : [
+			{
+			"img": "img/change/13.jpg",
+			"title": "我是你们的开心果呀^ ^",
+			"name": "水果姐姐",
+			"address": "校园",
+			"type" :"热门游戏"
+			},
+			{
+			"img": "img/change/14.jpg",
+			"title": "小谷:早上好",
+			"name": "Good小谷",
+			"address": "英魂口袋版",
+			"type" :"炉石传说"
+			},
+			{
+			"img": "img/change/15.jpg",
+			"title": "恢复的一天 十天高温注意防暑",
+			"name": "loveyou_qq",
+			"address": "CS:GO",
+			"type" :"DOTA2"
+			},
+			{
+			"img": "img/change/16.jpg",
+			"title": "【王者教学】最强全能，单排徒弟星耀上分单排徒弟星耀上分",
+			"name": "蘭陵大大",
+			"address": "王者荣耀",
+			"type" :"颜值"
+			},
+			{
+			"img": "img/change/17.jpg",
+			"title": "全能主播阿杰带你玩球球全能主播阿杰带你玩球球 单排徒弟星耀上分",
+			"name": "不想错过你丶阿杰",
+			"address": "球球大作战",
+			"type" :"科技"
+			},
+			{
+			"img": "img/change/18.jpg",
+			"title": "Joker周六长沙球宝见面会全能主播阿杰带你玩球球 单排徒弟星耀上分",
+			"name": "Joker超级战队",
+			"address": "球球大作战",
+			"type" :"王者荣耀"
+			},
+			{
+			"img": "img/change/19.jpg",
+			"title": "珍惜：还是打超影吧周六长沙球宝见面会全能主播",
+			"name": "瓜皮珍惜",
+			"address": "火影忍者",
+			"type" :"穿越火线"
+			},
+			{
+			"img": "img/change/20.jpg",
+			"title": "颜值 恢复的一天 十天高温注意防暑周六长沙球宝见面会全能主播",
+			"name": "loveyou_qq",
+			"address": "CS:GO"
+			},
+			{
+			"img": "img/change/21.jpg",
+			"title": "花山街社区卫生守护者周六长沙球宝见面会全能主播",
+			"name": "斗鱼党宣",
+			"address": "正能量",
+			"type" :"娱乐"
+			},
+			{
+			"img": "img/change/22.jpg",
+			"title": "Joker周六长沙球宝见面会周六长沙球宝见面会全能主播",
+			"name": "Joker超级战队",
+			"address": "球球大作战",
+			"type" :"科技"
+			},
+			{
+			"img": "img/change/23.jpg",
+			"title": "珍惜：还是打超影吧",
+			"name": "瓜皮珍惜",
+			"address": "火影忍者",
+			"type" :"客厅游戏"
+			},
+			{
+			"img": "img/change/24.jpg",
+			"title": "花山街社区卫生守护者周六长沙球宝见面会全能主播",
+			"name": "斗鱼党宣",
+			"address": "正能量",
+			"type" :"魔兽争霸"
+			},
+			{
+			"img": "img/change/20.jpg",
+			"title": "恢复的一天 十天高温注意防暑周六长沙球宝见面会全能主播",
+			"name": "loveyou_qq",
+			"address": "CS:GO",
+			"type" :"颜值"
+			},
+			{
+			"img": "img/change/21.jpg",
+			"title": "花山街社区卫生守护者周六长沙球宝见面会全能主播",
+			"name": "斗鱼党宣",
+			"address": "正能量",
+			"type" :"棋牌娱乐"
+			},
+			{
+			"img": "img/change/22.jpg",
+			"title": "Joker周六长沙球宝见面会周六长沙球宝见面会全能主播",
+			"name": "Joker超级战队",
+			"address": "球球大作战",
+			"type" :"格斗游戏"
+			},
+			{
+			"img": "img/change/23.jpg",
+			"title": "珍惜：还是打超影吧",
+			"name": "瓜皮珍惜",
+			"address": "火影忍者",
+			"type" :"魔兽世界"
+			},
+			{
+			"img": "img/change/24.jpg",
+			"title": "花山街社区卫生守护者周六长沙球宝见面会全能主播",
+			"name": "斗鱼党宣",
+			"address": "正能量",
+			"type" :"守望先锋"
+			},
+			{
+			"img": "img/change/13.jpg",
+			"title": "我是你们的开心果呀^ ^",
+			"name": "水果姐姐i",
+			"address": "校园",
+			"type" :"DNF"
+			},
+			{
+			"img": "img/change/22.jpg",
+			"title": "Joker周六长沙球宝见面会周六长沙球宝见面会全能主播",
+			"name": "Joker超级战队",
+			"address": "球球大作战",
+			"type" :"户外"
+			},
+			{
+			"img": "img/change/23.jpg",
+			"title": "珍惜：还是打超影吧",
+			"name": "瓜皮珍惜",
+			"address": "火影忍者",
+			"type" :"星秀"
+			},
+			{
+			"img": "img/change/14.jpg",
+			"title": "小谷:早上好",
+			"name": "Good小谷",
+			"address": "英魂口袋版",
+			"type" :"美食"
+			},
+			{
+			"img": "img/change/15.jpg",
+			"title": "恢复的一天 十天高温注意防暑",
+			"name": "loveyou_qq",
+			"address": "CS:GO",
+			"type" :"音乐"
+			},
+			{
+			"img": "img/change/16.jpg",
+			"title": "【王者教学】最强全能，单排徒弟星耀上分单排徒弟星耀上分",
+			"name": "蘭陵大大",
+			"address": "王者荣耀",
+			"type" :"客厅游戏"
+			},
+			{
+			"img": "img/change/17.jpg",
+			"title": "全能主播阿杰带你玩球球全能主播阿杰带你玩球球 单排徒弟星耀上分",
+			"name": "不想错过你丶阿杰",
+			"address": "球球大作战",
+			"type" :"王者荣耀"
+			},
+			{
+			"img": "img/change/18.jpg",
+			"title": "Joker周六长沙球宝见面会全能主播阿杰带你玩球球 单排徒弟星耀上分",
+			"name": "Joker超级战队",
+			"address": "球球大作战",
+			"type" :"客厅游戏"
+			},
+			{
+			"img": "img/change/19.jpg",
+			"title": "珍惜：还是打超影吧周六长沙球宝见面会全能主播",
+			"name": "瓜皮珍惜",
+			"address": "火影忍者",
+			"type" :"王者荣耀"
+			},
+			{
+			"img": "img/change/20.jpg",
+			"title": "恢复的一天 十天高温注意防暑周六长沙球宝见面会全能主播",
+			"name": "loveyou_qq",
+			"address": "CS:GO",
+			"type" :"移动游戏"
+			},
+			{
+			"img": "img/change/21.jpg",
+			"title": "花山街社区卫生守护者周六长沙球宝见面会全能主播",
+			"name": "斗鱼党宣",
+			"address": "正能量",
+			"type" :"热门游戏"
+			},
+			{
+			"img": "img/change/22.jpg",
+			"title": "Joker周六长沙球宝见面会周六长沙球宝见面会全能主播",
+			"name": "Joker超级战队",
+			"address": "球球大作战",
+			"type" :"热门游戏"
+			},
+			{
+			"img": "img/change/33.jpg",
+			"title": "珍惜：还是打超影吧",
+			"name": "瓜皮珍惜",
+			"address": "火影忍者",
+			"type" :"汽车"
+			},
+			{
+			"img": "img/change/34.jpg",
+			"title": "热门游戏 花山街社区卫生守护者周六长沙球宝见面会全能主播",
+			"name": "斗鱼党宣",
+			"address": "正能量",
+			"type" :"汽车"
+			},
+			{
+			"img": "img/change/35.jpg",
+			"title": "恢复的一天 十天高温注意防暑周六长沙球宝见面会全能主播",
+			"name": "loveyou_qq",
+			"address": "CS:GO",
+			"type" :"热门游戏"
+			},
+			{
+			"img": "img/change/36.jpg",
+			"title": "花山街社区卫生守护者周六长沙球宝见面会全能主播",
+			"name": "斗鱼党宣",
+			"address": "正能量",
+			"type" :"军事"
+			},
+			{
+			"img": "img/change/37.jpg",
+			"title": "Joker周六长沙球宝见面会周六长沙球宝见面会全能主播",
+			"name": "Joker超级战队",
+			"address": "球球大作战",
+			"type" :"热门游戏"
+			},
+			{
+			"img": "img/change/38.jpg",
+			"title": "珍惜：还是打超影吧",
+			"name": "瓜皮珍惜",
+			"address": "火影忍者",
+			"type" :"王者荣耀 "
+			},
+			{
+			"img": "img/change/39.jpg",
+			"title": "花山街社区卫生守护者周六长沙球宝见面会全能主播",
+			"name": "斗鱼党宣",
+			"address": "正能量",
+			"type" :"科普"
+			},
+			{
+			"img": "img/change/40.jpg",
+			"title": "恢复的一天 十天高温注意防暑周六长沙球宝见面会全能主播",
+			"name": "loveyou_qq",
+			"address": "CS:GO",
+			"type" :"财经"
+			},
+			{
+			"img": "img/change/41.jpg",
+			"title": "花山街社区卫生守护者周六长沙球宝见面会全能主播",
+			"name": "斗鱼党宣",
+			"address": "正能量",
+			"type" :"鱼教"
+			},
+			{
+			"img": "img/change/42.jpg",
+			"title": "Joker周六长沙球宝见面会周六长沙球宝见面会全能主播",
+			"name": "Joker超级战队",
+			"address": "球球大作战",
+			"type" :"英雄联盟"
+			},
+			{
+			"img": "img/change/43.jpg",
+			"title": "珍惜：还是打超影吧",
+			"name": "瓜皮珍惜",
+			"address": "火影忍者",
+			"type" :"体育赛事 "
+			},
+			{
+			"img": "img/change/44.jpg",
+			"title": "花山街社区卫生守护者周六长沙球宝见面会全能主播",
+			"name": "斗鱼党宣",
+			"address": "正能量",
+			"type" :"英雄联盟"
+			},
+			{
+			"img": "img/change/45.jpg",
+			"title": "珍惜：还是打超影吧",
+			"name": "瓜皮珍惜",
+			"address": "火影忍者",
+			"type" :"体育赛事 "
+			},
+			{
+			"img": "img/change/46.jpg",
+			"title": "花山街社区卫生守护者周六长沙球宝见面会全能主播",
+			"name": "斗鱼党宣",
+			"address": "正能量",
+			"type" :"英雄联盟"
+			}
+		],
+	"hotList" : [
+			{
+				"url" : "https://www.douyu.com/1052147",
+				"src" : "img/hot/01_a.jpg",
+				"title" : "棋牌娱乐"
+			},
+			{
+				"url" : "https://www.douyu.com/1052147",
+				"src" : "img/hot/02_a.jpg",
+				"title" : "天天狼杀"
+			},
+			{
+				"url" : "https://www.douyu.com/1052147",
+				"src" : "img/hot/03_a.jpg",
+				"title" : "炉石传说"
+			},
+			{
+				"url" : "https://www.douyu.com/1052147",
+				"src" : "img/hot/04_a.jpg",
+				"title" : "王者荣耀"
+			},
+			{
+				"url" : "https://www.douyu.com/1052147",
+				"src" : "img/hot/05_a.jpg",
+				"title" : "棋牌娱乐"
+			}
+		],
+	"changeHomeList" : [
+			{
+				"id": "01",
+				"src" : "img/changelive/01.jpg"
+			},
+			{
+				"id": "02",
+				"src" : "img/changelive/02.jpg"
+			},
+			{
+				"id": "03",
+				"src" : "img/changelive/03.jpg"
+			},
+			{
+				"id": "04",
+				"src" : "img/changelive/04.jpg"
+			},
+			{
+				"id": "05",
+				"src" : "img/changelive/05.jpg"
+			}
+		]
+}

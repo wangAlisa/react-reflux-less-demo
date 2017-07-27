@@ -1,0 +1,1 @@
+define("modules/page/buy.jsx",function(e,t,n){"use strict";n.exports=React.createClass({displayName:"exports",render:function(){return React.createElement("h1",null,"Buy")}})});

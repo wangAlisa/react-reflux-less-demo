@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+
+    <style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.row{
+		overflow:hidden;
+	}
+	.col{
+		width:29px;
+		height:29px;
+		float:left;
+	}
+	.map{
+		position:absolute;
+		top:50%;
+		left:50%;
+		background:lightyellow url(/games/贪吃蛇/images/bg5.png) repeat;
+		box-shadow:0px 0px 50px #cbf986;
+	}
+	#controlPanel{
+			width:150px;
+			position:absolute;
+			top:100px;
+			left:1000px;
+		}
+	#controlPanel div{
+		text-align: center;
+		font-size: 28px;
+		line-height: 150%;
+		font-weight:bold;
+		border:2px solid #ccc;
+		border-radius: 10px;
+		color:red;
+		cursor: pointer;
+		margin-bottom:10px;
+		background:lightgreen;
+	}
+
+	#controlPanel #sele{
+		width:150px;
+		line-height: 100%;
+		padding:5px 0px;
+	}
+	#controlPanel #sele #level{
+		width:120px;
+		height:25px;
+	}
+	#controlPanel #sele #btn{
+		width:50px;
+		height:30px;
+		color:red;
+		font-weight:bold;
+	}
+	</style>
+</head>
+<body>
+	<div id="controlPanel">
+		<div id="start">重新开始</div>
+		<div id="pause">暂停游戏</div>
+		<div id="continue">继续游戏</div> 
+		<div id="score">得分:
+			<span id="scores">0</span>
+		</div>
+		<div id = "sele">选关
+			<input type="text" id = "level" placeholder = "请输入关卡">
+			<button id="btn">确定</button>
+		</div>
+	</div>
+
+<script>
+// 地图
+function Map(row,col){
+	this.row = row;
+	this.col = col;
+	this.dom = document.createElement("div");
+	this.arr = [];
+}
+Map.prototype.fillDom = function(){
+	for(var i = 0; i<this.row;i++){
+		var rowDom = document.createElement("div");
+		for(var j= 0;j<this.col;j++){
+			var colDom = document.createElement("div");
+			colDom.className = "col"
+			rowDom.appendChild(colDom);
+		}
+		rowDom.className = "row";
+		this.arr.push(rowDom.childNodes);
+		this.dom.appendChild(rowDom);
+	}
+	this.dom.className = "map";
+	this.up();
+	console.log(this.arr);
+	console.log(this.arr.length);
+}
+// 上树
+Map.prototype.up  = function(){
+	document.body.appendChild(this.dom);
+}
+
+Map.prototype.domReset = function(){
+	var width = this.dom.clientWidth;
+	var height = this.dom.clientHeight;
+	this.dom.style.marginLeft = - width/2 +"px";
+	this.dom.style.marginTop = - height/2 +"px";
+}
+Map.prototype.render = function(){
+	for(var i = 0; i<this.arr.length; i++){
+		for(var j = 0; j<this.arr[i].length;j++){
+			this.arr[i][j].style = "";
+		}
+	}
+}
+
+// 实例化
+var map = new Map(20,20);
+// 调用Map方法
+map.fillDom();
+map.domReset();
+
+
+
+
+// 蛇类
+function Snake(){
+	this.bodyarr=[{x:1,y:1},{x:1,y:2},{x:1,y:3}];
+	this.headarr=[{x:1,y:4}];
+	this.forward = 39;
+	// this.change = {};
+}
+// 实例化一条蛇
+var snake = new Snake();
+// 根据按键判断蛇运动的方向，并使得蛇往前走
+Snake.prototype.move = function(){
+	// console.log(this.headarr[0].x,this.headarr[0].y);
+
+	var change = {};
+	for(var i in this.headarr[0]){
+		change[i] = this.headarr[0][i];
+	}
+	if(this.forward == 37){
+		this.headarr[0].y--;
+	}else if(this.forward == 38){
+		this.headarr[0].x--;
+	}else if(this.forward == 39){
+		this.headarr[0].y++;
+	}else if(this.forward == 40){
+		this.headarr[0].x++;
+	}
+	// 将蛇的头部添加到蛇身体的最后关节
+	this.bodyarr.push(change);
+	// 删除蛇身体的第一个关节
+	this.bodyarr.shift();
+}
+// 按键方向不能与蛇运动的方向相反
+Snake.prototype.changeForward = function(forward){
+
+	if(Math.abs(forward - this.forward) === 2){
+		return;
+	}
+	this.forward = forward;
+}
+// 键盘事件，确认按下的是上下左右键
+document.onkeydown = function(e){
+	// e.preventDefault;
+	snake.changeForward(e.keyCode);
+}
+// 蛇长大
+Snake.prototype.growup = function(){
+	this.bodyarr.unshift(this.bodyarr[0]);
+	scores.innerHTML = parseInt(scores.innerHTML)+1;
+}
+
+// 渲染蛇的头部和身体
+Snake.prototype.render = function(){
+	map.render();
+	// 判断蛇头的方向并改变舌头所在坐标的div标签的背景图片
+	if(this.forward == 37){
+		// map.arr[this.headarr[0].x][this.headarr[0].y].style.borderRadius = "50% 35% 35% 50%";
+		map.arr[this.headarr[0].x][this.headarr[0].y].style.background = "url(images/head37.png) 100% 100%";
+	
+	}else if(this.forward == 38){
+		// map.arr[this.headarr[0].x][this.headarr[0].y].style.borderRadius = "50% 50% 35% 35%";
+		map.arr[this.headarr[0].x][this.headarr[0].y].style.background= "url(images/head38.png) 100% 100%";
+	
+	}else if(this.forward == 39){
+		// map.arr[this.headarr[0].x][this.headarr[0].y].style.borderRadius = "35% 50% 50% 35%";
+		map.arr[this.headarr[0].x][this.headarr[0].y].style.background= "url(images/head39.png) 100% 100%";
+	
+	}else if(this.forward == 40){
+		// map.arr[this.headarr[0].x][this.headarr[0].y].style.borderRadius = "35% 35% 50% 50%";
+		map.arr[this.headarr[0].x][this.headarr[0].y].style.background= "url(images/head40.png) 100% 100%";
+	}
+	// 渲染蛇的身体
+	for(var j=1;j<this.bodyarr.length;j++){
+
+		map.arr[this.bodyarr[j].x][this.bodyarr[j].y].style.background = "url(images/body.png) 100% 100%";
+		map.arr[this.bodyarr[j].x][this.bodyarr[j].y].style.borderRadius = "10%";
+	}
+
+	//渲染蛇的尾部，并根据蛇运动方向不同改变蛇尾巴的方向
+	if(this.bodyarr[0].y < this.bodyarr[1].y && this.bodyarr[0].x == this.bodyarr[1].x ){
+		map.arr[this.bodyarr[0].x][this.bodyarr[0].y].style.background = "#8EEE57";
+		map.arr[this.bodyarr[0].x][this.bodyarr[0].y].style.borderRadius ="50% 10% 10% 50%";
+		map.arr[this.bodyarr[0].x][this.bodyarr[0].y].style.background = "url(images/body.png) 100% 100%";
+
+	}
+	if(this.bodyarr[0].x > this.bodyarr[1].x && this.bodyarr[0].y == this.bodyarr[1].y ){
+		map.arr[this.bodyarr[0].x][this.bodyarr[0].y].style.background = "#8EEE57";
+		map.arr[this.bodyarr[0].x][this.bodyarr[0].y].style.borderRadius = "10% 10% 50% 50%";
+		map.arr[this.bodyarr[0].x][this.bodyarr[0].y].style.background = "url(images/body.png) 100% 100%";
+	}
+	if(this.bodyarr[0].y > this.bodyarr[1].y && this.bodyarr[0].x == this.bodyarr[1].x ){
+		map.arr[this.bodyarr[0].x][this.bodyarr[0].y].style.background = "#8EEE57";
+		map.arr[this.bodyarr[0].x][this.bodyarr[0].y].style.borderRadius ="10% 50% 50% 10%";
+		map.arr[this.bodyarr[0].x][this.bodyarr[0].y].style.background = "url(images/body.png) 100% 100%";
+	}
+	if(this.bodyarr[0].x < this.bodyarr[1].x && this.bodyarr[0].y == this.bodyarr[1].y ){
+		map.arr[this.bodyarr[0].x][this.bodyarr[0].y].style.background = "#8EEE57";
+		map.arr[this.bodyarr[0].x][this.bodyarr[0].y].style.borderRadius = "50% 50% 10% 10%";
+		map.arr[this.bodyarr[0].x][this.bodyarr[0].y].style.background = "url(images/body.png) 100% 100%";
+	}
+}
+Snake.prototype.check=function(){
+	// 判断是否越界
+	if(this.headarr[0].x>map.col-1 || this.headarr[0].y>map.col-1 ||this.headarr[0].x<0 || this.headarr[0].y<0 ){
+		clearInterval(timer);
+		alert("越界啦 GAME OVER");
+		return true;
+	}
+	// 判断蛇自杀
+	for(var i = 0; i<this.bodyarr.length;i++){
+		if(this.headarr[0].x === this.bodyarr[i].x && this.headarr[0].y === this.bodyarr[i].y){
+			clearInterval(timer);
+			alert("自杀啦 GAME OVER");
+			return true;
+		}
+	}
+	// 判断是否撞墙
+	for(var i=0;i<wall.arr[wall.index].length;i++){
+		if(this.headarr[0].x === wall.arr[wall.index][i].x &&this.headarr[0].y === wall.arr[wall.index][i].y){
+		clearInterval(timer);
+		alert("撞墙啦 GAME OVER");
+		return true;	
+		}
+	}
+}
+var timer = setInterval(function(){
+	snake.move();
+	if(snake.check()){
+		return;
+	}
+	snake.render();
+	food.render();
+	food.eat(); 
+	wall.render();	
+},400)
+
+
+//食物
+function Food(x,y){
+	this.foodarr = {
+		x:x,
+		y:y
+	}
+}
+// 食物的随机坐标
+var foodx = parseInt(Math.random()*map.row-1);
+var foody = parseInt(Math.random()*map.col-1);
+var food = new Food(foodx,foody);
+
+// 对食物进行渲染
+Food.prototype.render = function(){
+	map.arr[this.foodarr.x][this.foodarr.y].style.background = "url(images/food.png)";	
+}
+Food.prototype.check = function(){
+	foodx = parseInt(Math.random()*map.row);
+	foody = parseInt(Math.random()*map.col);
+	// 判断食物是否出现在蛇上
+	for(var i =0; i<snake.bodyarr.length;i++){
+		if(foodx  === snake.headarr[0].x && foody === snake.headarr[0].y || foodx  === snake.bodyarr[i].x && foody === snake.bodyarr[i].y){
+
+			foodx = parseInt(Math.random()*map.row);
+			foody = parseInt(Math.random()*map.col);
+
+			i=-1;
+		}
+	} 
+	// 判断食物是否出现在墙
+	for(var i=0;i<wall.arr[wall.index].length;i++){
+			if(foodx === wall.arr[wall.index][i].x && foody === wall.arr[wall.index][i].y){
+			foodx = parseInt(Math.random()*map.row);
+			foody = parseInt(Math.random()*map.col);
+			i=-1;
+			}
+	}
+	food = new Food(foodx,foody);
+	food.render();
+}
+// 判断食物是否被蛇吃到
+Food.prototype.eat = function(){
+	if(this.foodarr.x === snake.headarr[0].x && this.foodarr.y === snake.headarr[0].y){
+		snake.growup();
+		snake.render();
+		food.check();
+	}
+}
+
+
+// 创建墙
+function Wall(arr){
+	this.arr = arr;
+	this.index = 0;
+}
+var arr = [
+	[{x:5,	y:5},{x:5,y:6},{x:5,y:7},{x:5,y:8},{x:5,y:9},{x:5,y:10},{x:5,y:11}],
+	[{x:1,	y:10},{x:2,y:10},{x:3,y:10},{x:4,y:10},{x:5,y:10},{x:6,y:10},{x:7,y:10}],
+    [{x:5,	y:1},{x:5,y:2},{x:5,y:3},{x:5,y:4},{x:5,y:5},{x:5,y:6},{x:5,y:7},{x:5,y:8},{x:5,y:9},{x:5,y:10},{x:5,y:11}],
+    [{x:10,	y:10},{x:10,y:11},{x:10,y:12},{x:10,y:13},{x:10,y:14},{x:10,y:15},{x:11,y:16},{x:12,y:12},{x:13,y:13},{x:14,y:14}],
+    [{x:10,	y:5},{x:10,y:6},{x:10,y:7},{x:10,y:8},{x:9,y:8},{x:8,y:8},{x:7,y:8},{x:6,y:8},{x:6,y:9},{x:6,y:10},{x:6,y:11},{x:6,y:12},{x:6,y:13}] 
+];
+// 实例化墙
+var wall = new Wall(arr);
+console.log(arr[0][0]);
+// 渲染墙
+Wall.prototype.render = function(){
+	for(var i=0;i<this.arr[this.index].length;i++){
+			map.arr[this.arr[this.index][i].x][this.arr[this.index][i].y].style.background = "url(images/wall40.png) 100% 100%";
+	}
+}
+
+
+// 按钮
+var controlPanel = document.getElementById("controlPanel");
+var start = document.getElementById("start");
+var pause = document.getElementById("pause");
+var _continue = document.getElementById("continue");
+// var score = document.getElementById("score");
+var scores = document.getElementById("scores");
+var btn = document.getElementById("btn");
+var level = document.getElementById("level");
+
+// 开始游戏
+start.onclick = function(){ 
+	scores.innerHTML=0;
+  	map.end();
+  	map.down();
+  	map = new Map(20,20);
+  	map.fillDom();
+  	map.domReset();
+  	snake = new Snake();
+  	map.start();
+ }
+ pause.onclick = function(){
+	map.end();
+}
+_continue.onclick = function(){
+	map.end();
+  	map.start();
+}
+/*游戏开始结束方法*/
+Map.prototype.end = function(){
+	clearInterval(timer);
+}
+//游戏开始方法
+Map.prototype.start = function(){
+	
+	timer = setInterval(function(){
+	snake.move();
+	if(snake.check()){
+		return;
+	}
+	snake.render();
+	food.render();
+	food.eat(); 
+	wall.render();	
+	},400)
+}
+
+Map.prototype.down = function(){
+	document.body.removeChild(map.dom);
+}
+btn.onclick = function(){
+	if(level.value == "" || level.value > 4 ){
+		alert("请输入0-4之间的关卡");
+		wall.index = 0;
+		return;
+	}else{
+		wall.index = level.value;
+	}
+	level.value = "";
+	map.end();
+	map.down();
+	map = new Map(20,20);
+  	map.fillDom();
+  	map.domReset();
+  	map.up();
+  	snake = new Snake();
+  	map.start();
+}
+</script>
+</body>
+</html>

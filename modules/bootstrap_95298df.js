@@ -1,0 +1,1 @@
+define("modules/bootstrap.jsx",function(e){"use strict";var t=e("modules/route/route.jsx");ReactDOM.render(t,app)});

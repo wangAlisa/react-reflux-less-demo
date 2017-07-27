@@ -1,0 +1,1 @@
+function Background(i,n){this.img=i,this.speed=n}

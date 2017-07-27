@@ -1,0 +1,1 @@
+function Food(o,i){this.position={x:o,y:i}}

@@ -1,0 +1,1 @@
+function Wall(a){this.arr=a}

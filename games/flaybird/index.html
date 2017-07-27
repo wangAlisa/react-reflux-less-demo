@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+
+    <style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	body{
+		text-align: center;
+	}
+	img{
+		display:none;
+	}
+	canvas{
+		border:1px solid red;
+	}
+
+
+	</style>
+</head>
+<body>
+	<canvas width="360" height="512" id = "canvas"></canvas>
+	<img src="/games/flaybird/images/bird0_0.png" alt="">
+	<img src="/games/flaybird/images/bird0_1.png" alt="">
+	<img src="/games/flaybird/images/bird0_2.png" alt="">
+	<img src="/games/flaybird/images/bird1_0.png" alt="">
+	<img src="/games/flaybird/images/bird1_1.png" alt="">
+	<img src="/games/flaybird/images/bird1_2.png" alt="">
+	<img src="/games/flaybird/images/bird2_0.png" alt="">
+	<img src="/games/flaybird/images/bird2_1.png" alt="">
+	<img src="/games/flaybird/images/bird2_2.png" alt="">
+	<img src="/games/flaybird/images/bg_day.png" alt="">
+	<img src="/games/flaybird/images/bg_night.png" alt="">
+	<img src="/games/flaybird/images/pipe_down.png" alt="">
+	<img src="/games/flaybird/images/pipe_up.png" alt="">
+	<img src="/games/flaybird/images/pipe2_down.png" alt="">
+	<img src="/games/flaybird/images/pipe2_up.png" alt="">
+	<img src="/games/flaybird/images/score_panel.png" alt="">
+	<img src="/games/flaybird/images/title.png" alt="">
+	<img src="/games/flaybird/images/tutorial.png" alt="">
+	<img src="/games/flaybird/images/font_048.png" alt="">
+	<img src="/games/flaybird/images/font_049.png" alt="">
+	<img src="/games/flaybird/images/font_050.png" alt="">
+	<img src="/games/flaybird/images/font_051.png" alt="">
+	<img src="/games/flaybird/images/font_052.png" alt="">
+	<img src="/games/flaybird/images/font_053.png" alt="">
+	<img src="/games/flaybird/images/font_054.png" alt="">
+	<img src="/games/flaybird/images/font_055.png" alt="">
+	<img src="/games/flaybird/images/font_056.png" alt="">
+	<img src="/games/flaybird/images/font_057.png" alt="">
+	<img src="/games/flaybird/images/medals_1.png" alt="">
+	<img src="/games/flaybird/images/land.png"   alt="">
+	<img src="/games/flaybird/images/text_game_over.png" alt="">
+
+<script type="text/javascript"></script>
+<script type="text/javascript" src="/games/flaybird/js/background_f48adc9.js"></script>
+<script type="text/javascript" src="/games/flaybird/js/bird_42d3609.js"></script>
+<script type="text/javascript" src="/games/flaybird/js/pipe_a6311c6.js"></script>
+<script >
+var imgs = document.querySelectorAll("img");
+for(var i = 0;i<imgs.length;i++){
+	var src = imgs[i].src
+	src.replace(/\/(\w+)\./,function(match,$1){
+		imgs[i].id = $1;
+	})
+}
+
+var landImg = $("land");
+var bg_day = $("bg_day");
+var ctx = $("canvas").getContext("2d");
+var title = $("title");
+var tutorial = $("tutorial");
+var bird_img_arr = [$("bird0_0"),$("bird0_1"),$("bird0_2")];
+var pipe_img_arr = [$("pipe_up"),$("pipe_down")];
+var medals_1 = $("medals_1");
+var game_over = $("text_game_over");
+// var font_048 = $("font_048");
+// var font_049 = $("font_049");
+// var font_050 = $("font_050");
+// var font_051 = $("font_051");
+// var font_052 = $("font_052");
+// var font_053 = $("font_053");
+// var font_054 = $("font_054");
+// var font_055 = $("font_055");
+// var font_056 = $("font_056");
+// var font_057 = $("font_057");
+var scores = [$("font_048"),$("font_049"),$("font_050"),$("font_051"),$("font_052"),$("font_053"),$("font_054"),$("font_055"),$("font_056"),$("font_057")]
+
+window.onload = function(){
+	var land = new Background(landImg,2);
+	var bg = new Background(bg_day,1);
+	
+	var bird = new Bird(bird_img_arr);
+	var pipe = new Pipe(pipe_img_arr,medals_1);
+	var g = new Game(ctx,bg,land,title,tutorial,bird,pipe,game_over,scores);
+	g.welcome();
+}
+
+function $(id){
+	return document.querySelector("#"+id);
+}
+
+
+</script>
+</body>
+
+</html>

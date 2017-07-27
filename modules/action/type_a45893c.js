@@ -1,0 +1,1 @@
+define("modules/action/type.jsx",function(e,t,c){"use strict";c.exports=Reflux.createActions(["changeType"])});

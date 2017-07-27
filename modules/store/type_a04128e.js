@@ -1,0 +1,1 @@
+define("modules/store/type.jsx",function(e,t,s){"use strict";var n=e("modules/action/type.jsx");s.exports=Reflux.createStore({listenables:[n],onChangeType:function(e){this.trigger(e)}})});

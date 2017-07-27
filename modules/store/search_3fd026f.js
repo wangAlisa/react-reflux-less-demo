@@ -1,0 +1,1 @@
+define("modules/store/search.jsx",function(e,r,s){"use strict";var o=e("modules/action/search.jsx"),i=e("modules/conf.jsx");s.exports=Reflux.createStore({listenables:[o],onChangeSearch:function(e){var r=[];i.DATABASE.forEach(function(s){for(var o in s)if(s[o].indexOf(e)>=0)return void r.push(s)}),(void 0===e||"live"===e)&&(r=i.DATABASE),i.searchVlue=r,this.trigger(r)}})});

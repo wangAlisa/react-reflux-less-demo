@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+
+    <style>
+	*{
+		margin: 0;
+		padding: 0;
+		text-align:center;
+	}
+	img{
+		display:none;
+	}
+
+	</style>
+</head>
+<body>
+	<canvas width="240" height="320" style="border:1px solid red" id="canvas"></canvas>
+	<img src="/games/打地鼠/img/bj.png" alt="">
+	<img src="/games/打地鼠/img/cd.png" alt="">
+	<img src="/games/打地鼠/img/chuizi.png" alt="">
+	<img src="/games/打地鼠/img/cw.png" alt="">
+	<img src="/games/打地鼠/img/cwk.png" alt="">
+	<img src="/games/打地鼠/img/dishu.png" alt="">
+	<img src="/games/打地鼠/img/dishu_2.png" alt="">
+	<img src="/games/打地鼠/img/tuzi.png" alt="">
+	<img src="/games/打地鼠/img/life.png" alt="">
+	<img src="/games/打地鼠/img/life1.png" alt="">
+	<img src="/games/打地鼠/img/logo.png" alt="">
+	<img src="/games/打地鼠/img/num_1.png" alt="">
+	<img src="/games/打地鼠/img/num_3.png" alt="">
+	<img src="/games/打地鼠/img/ready.png" alt="">
+	<img src="/games/打地鼠/img/ts.png" alt="">
+	<img src="/games/打地鼠/img/ui.png" alt="">
+	<audio src="/games/打地鼠/sound/bgsound.ogg" id = "bgsound"></audio>
+	<audio src="/games/打地鼠/sound/clicksound.wav" id = "clicksound"></audio>
+
+<script type="text/javascript" src="/games/打地鼠/js/game_7bb9427.js"></script>
+<script type="text/javascript" src="/games/打地鼠/js/bear_68dac45.js"></script>
+<script>
+var imgs = document.querySelectorAll("img");
+for(var i=0;i<imgs.length;i++){
+	imgs[i].src.replace(/\/(\w+)\./,function(match,$1){
+		imgs[i].id = $1;
+	})
+}
+window.onload = function(){
+	var ctx = $("canvas").getContext("2d");
+	console.log(ctx);
+	var bj = $("bj");
+	var logo= $("logo");
+	var ui = $("ui");
+	var life = $("life");
+	var life1 = $("life1");
+	var num_1 = $("num_1");
+	var num_3 = $("num_3");
+	var chuizi = $("chuizi");
+	var cw = $("cw");
+	var cwk = $("cwk");
+	var cd = $("cd");
+	var bgsound = $("bgsound");
+	var lick = $("clicksound");
+	var dishu = [$("dishu"),$("dishu_2"),$("tuzi")];
+	var bear = new Bear(dishu);
+	var g = new Game(ctx,bj,logo,ui,chuizi,bear,life,life1,num_1,num_3,cw,cwk,cd,bgsound,clicksound);
+		g.renderbj();
+		g.renderlogo();
+		g.renderui();
+		g.click();
+}
+function $(id){
+		return document.querySelector("#"+id);
+}
+	
+</script>
+</body>
+</html>
